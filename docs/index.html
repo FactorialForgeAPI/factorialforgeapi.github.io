@@ -1,1 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="windows-1251">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactorialForgeAPI - Official Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Connect Roboto font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Use Roboto for main text */
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #003366; /* Dark blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        /* New styles for the header */
+        header h1 {
+            color: #003369; /* Text color */
+            font-size: 3.5rem; /* Font size */
+            font-family: 'Roboto', sans-serif; /* Font */
+            text-shadow: 
+                3px 3px 5px rgba(0, 0, 0, 0.5), /* Shadow */
+                0 0 2px white, /* Thin white outline */
+                0 0 2px white, /* Thin white outline */
+                0 0 2px white, /* Thin white outline */
+                0 0 2px white; /* Thin white outline */
+            margin: 0; /* Remove default margins */
+            padding: 10px 0; /* Add some padding top and bottom */
+            letter-spacing: 2px; /* Increase letter spacing */
+            font-weight: 700; /* Bold font */
+        }
+        h1, h2, h3 {
+            color: #003366; /* Dark blue */
+            font-family: 'Roboto', sans-serif; /* Use Roboto for headings */
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #0056b3; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #004494; /* Dark blue */
+        }
+        #resultText {
+            font-weight: bold;
+            color: #003366; /* Dark blue */
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            padding: 10px 0;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #003366; /* Dark blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .download-button:hover {
+            background: #002244; /* Dark blue */
+        }
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        /* Styles for <code> block */
+        code {
+            font-size: 16px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FactorialForgeAPI.js</h1>
+        <nav>
+            <a href="#demo">Demo</a>
+            <a href="#relevance">Relevance</a>
+            <a href="#api">API Description</a>
+            <a href="#math">Mathematics</a>
+            <a href="#tech">Technical Features</a>
+            <a href="#testing">Testing</a>
+            <a href="#download">Download</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Demo -->
+        <section id="demo">
+            <h2>Demo</h2>
+            <p>Enter a number to calculate its factorial:</p>
+            <input type="number" id="numberInput" min="0" placeholder="Enter a number" />
+            <button id="calculateButton">Calculate</button>
+            <p id="resultText"></p>
+        </section>
 
+        <!-- Relevance -->
+        <section id="relevance">
+            <h2>Relevance of the Problem</h2>
+            <p>Factorials are widely used in mathematics, statistics, combinatorics, probability theory, and other fields. However, calculating factorials for large numbers is a computationally intensive task, especially with limited resources. FactorialForgeAPI solves this problem by providing an efficient tool for calculating factorials using parallel computing and mathematical approximations.</p>
+            <h3>Problems Solved by the Product</h3>
+            <ul>
+                <li><strong>Accelerated Calculations:</strong> The use of Web Workers significantly speeds up calculations for large numbers.</li>
+                <li><strong>Efficient Resource Utilization:</strong> Asynchronous processing prevents blocking the main thread, which is especially important in web applications.</li>
+                <li><strong>Support for Large Numbers:</strong> The use of <code>BigInt</code> allows working with numbers that exceed the standard JavaScript numeric type.</li>
+            </ul>
+        </section>
+
+        <!-- API Description -->
+        <section id="api">
+            <h2>API Description</h2>
+            <p>FactorialForgeAPI provides a powerful and efficient interface for calculating factorials using modern parallel computing methods and mathematical approximations. Key methods:</p>
+            <h3>compute(n)</h3>
+            <p>Calculates the factorial of the number <code>n</code> using parallel computing via Web Workers. This method is optimized for working with large numbers and uses an algorithm that splits the task into multiple threads to speed up calculations.</p>
+            <h3>approximation(n)</h3>
+            <p>Returns an approximate value of the factorial using Stirling's formula. This method is particularly useful for large values of <code>n</code>, where exact calculation becomes computationally intensive.</p>
+            <h3>Using the API</h3>
+            <p>To use the API, include the <code>FactorialForgeAPI.js</code> library in your project. After that, you can call the <code>compute</code> and <code>approximation</code> methods, passing them a non-negative integer.</p>
+            <p>Example usage:</p>
+            <pre>
+const result = await FactorialForgeAPI.compute(5); // 120
+const approx = await FactorialForgeAPI.approximation(5); // 118.019
+            </pre>
+            <p>Note that the <code>compute</code> method can handle values up to 170, after which the result may be inaccurate due to JavaScript's limitations on number representation.</p>
+        </section>
+
+        <!-- Mathematical Description -->
+        <section id="math">
+            <h2>Mathematical Description</h2>
+            <p>The factorial of a number <code>n</code> (denoted as <code>n!</code>) is the product of all positive integers from 1 to <code>n</code>. For example, <code>5! = 5 * 4 * 3 * 2 * 1 = 120</code>.</p>
+            <p>For large values of <code>n</code>, Stirling's approximation is used:</p>
+            <pre>
+log(n!) ~ n * log(n) - n + 0.5 * log(2 * pi * n)
+            </pre>
+            <p>This formula allows for a quick estimation of the factorial value for large <code>n</code>, which is especially useful in statistics, combinatorics, and other fields where factorials are frequently encountered.</p>
+            <h3>Factorial Calculation Algorithm</h3>
+            <p>To calculate the factorial, a parallel algorithm is used that splits the task into multiple threads using Web Workers. Each thread calculates the product of numbers in its range, after which the results are combined. This significantly speeds up calculations for large values of <code>n</code>.</p>
+        </section>
+
+        <!-- Technical Features -->
+        <section id="tech">
+            <h2>Technical Implementation Features</h2>
+            <p>FactorialForgeAPI is implemented using modern JavaScript technologies and Web Workers to enhance performance. The library is optimized for working with large numbers and includes:</p>
+            <ul>
+                <li><strong>Parallel Computing:</strong> The use of Web Workers allows splitting the task into multiple threads, significantly speeding up calculations for large values of <code>n</code>.</li>
+                <li><strong>Asynchronous Processing:</strong> All calculations are performed asynchronously, preventing the main thread from being blocked and allowing the user to continue interacting with the application.</li>
+                <li><strong>Support for Large Numbers:</strong> The <code>BigInt</code> type is used to handle values that exceed the standard JavaScript numeric type.</li>
+                <li><strong>Stirling's Formula:</strong> For large values of <code>n</code>, Stirling's approximation is used to avoid overflow and reduce computational complexity.</li>
+            </ul>
+            <h3>Pros and Cons of the Algorithm</h3>
+            <p><strong>Pros:</strong></p>
+            <ul>
+                <li>High calculation speed for small and medium values of <code>n</code> due to parallel processing.</li>
+                <li>Use of Stirling's formula for quick approximation of large factorials.</li>
+                <li>Asynchronous processing, improving user experience.</li>
+            </ul>
+            <p><strong>Cons:</strong></p>
+            <ul>
+                <li>Limitation on the maximum value of <code>n</code> due to JavaScript's number representation.</li>
+                <li>Stirling's approximation may be inaccurate for small values of <code>n</code>.</li>
+            </ul>
+        </section>
+
+        <!-- Testing and Statistics -->
+        <section id="testing">
+            <h2>Testing and Statistics</h2>
+            <p>To evaluate the performance and accuracy of FactorialForgeAPI, tests were conducted on various devices and under different conditions. Below are the test results:</p>
+            <h3>Performance</h3>
+            <ul>
+                <li><strong>Desktop:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.2 ms.</li>
+                <li><strong>Laptop:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.3 ms.</li>
+                <li><strong>Smartphone:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.5 ms.</li>
+            </ul>
+            <h3>Algorithm Accuracy</h3>
+            <ul>
+                <li>For values <code>n < 20</code>, the calculation accuracy is 100%.</li>
+                <li>For values <code>n > 20</code>, Stirling's approximation is used, providing accuracy up to 15 decimal places.</li>
+            </ul>
+            <h3>Applicability</h3>
+            <p>FactorialForgeAPI can be used in various fields, including:</p>
+            <ul>
+                <li><strong>Scientific Computing:</strong> For calculating factorials in statistics, combinatorics, and probability theory.</li>
+                <li><strong>Education:</strong> As a teaching tool for studying algorithms and parallel computing.</li>
+                <li><strong>Web Applications:</strong> For real-time factorial calculations without blocking the interface.</li>
+            </ul>
+        </section>
+
+        <!-- Download the Library -->
+        <section id="download">
+            <h2>Download the Library</h2>
+            <p>You can download the archive with the library using the following link:</p>
+            <a href="../distr/FactorialForgeAPI_1.0.0.zip" class="download-button">Download FactorialForgeAPI.zip</a>
+            <p><strong>Version:</strong> 1.0.0</p>
+            <p><strong>Release Date:</strong> March 20, 2025</p>
+            <p><strong>File Size:</strong> 9.53 KB</p>
+            <p>This is a free, open-source product. You are free to use, modify, and distribute it under the terms of the license specified in the <code>FactorialForgeAPI.js</code> file.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 FactForPI Dev. All rights reserved. Contact: <a href="mailto:factforpi@tuta.io">factforpi@tuta.io</a></p>
+        <p>The site does not use cookies. The site administrator is not responsible for the accuracy, functionality, and applicability of the information presented on the site.</p>
+    </footer>
+    <script src="../build/_1.0.0/FactorialForgeAPI.js"></script>
+    <script>
+        document.getElementById('calculateButton').addEventListener('click', async () => {
+            const input = document.getElementById('numberInput').value;
+            const number = parseInt(input);
+            if (isNaN(number) || number < 0) {
+                document.getElementById('resultText').innerText = 'Please enter a positive integer.';
+                return;
+            }
+            const result = await FactorialForgeAPI.compute(number);
+            document.getElementById('resultText').innerText = `Result: ${result}`;
+        });
+    </script>
+</body>
+</html>
