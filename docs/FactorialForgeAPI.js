@@ -17,7 +17,7 @@
  * Example usage:
  * ```javascript
  * (async () => {
- *   console.log(await FactorialForgeAPI.compute(20)); // Outputs the factorial of 100 as a string (approximate)
+ *   console.log(await FactorialForgeAPI.compute(20)); // Outputs the factorial of 20 as a string 
  *   console.log(await FactorialForgeAPI.compute(1000)); // Outputs the factorial of 1000 as a string (approximate)
  * })();
  * ```
@@ -159,6 +159,6 @@ const FactorialForgeAPI = {
 
 // Example usage of the API:
 (async () => {
-  console.log(await FactorialForgeAPI.compute(20)); // Outputs the factorial of 100 as a string (approximate)
+  console.log(await FactorialForgeAPI.compute(20)); // Outputs the factorial of 20 as a string 
   console.log(await FactorialForgeAPI.compute(1000)); // Outputs the factorial of 1000 as a string (approximate)
 })();
