@@ -1,7 +1,11 @@
 # FactorialForgeAPI
 
 ## Description
-FactorialForgeAPI is a library for calculating factorials of large numbers using parallelism and Stirling's approximation. It provides an efficient way to compute factorials for large values by leveraging Web Workers for parallel processing.
+FactorialForgeAPI is a JavaScript library for calculating factorials of large numbers using parallel computing and Stirling's approximation. It leverages Web Workers for efficient parallel processing and provides:
+- **Exact results** for small values of \( n \) (using direct computation).
+- **Approximate results** for large values of \( n \) (using Stirling's approximation).
+
+This makes it a powerful tool for both precise calculations and quick estimations in mathematical, statistical, and scientific applications.
 
 ## Installation
 1. Download the `FactorialForgeAPI.js` file.
