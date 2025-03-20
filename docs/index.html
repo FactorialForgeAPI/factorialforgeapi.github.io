@@ -161,7 +161,7 @@
         <!-- API Description -->
         <section id="api">
             <h2>API Description</h2>
-            <p>FactorialForgeAPI provides a powerful and efficient interface for calculating factorials using modern parallel computing methods and mathematical approximations. Key methods:</p>
+            <p>FactorialForgeAPI provides a powerful and efficient interface for calculating factorials using modern parallel computing methods and mathematical approximations. It delivers exact results for small values of <code>n</code> and highly accurate approximations for large values of <code>n</code> using Stirling's formula. Key methods:</p>
             <h3>compute(n)</h3>
             <p>Calculates the factorial of the number <code>n</code> using parallel computing via Web Workers. This method is optimized for working with large numbers and uses an algorithm that splits the task into multiple threads to speed up calculations. <strong>Note:</strong> For <code>n > 20</code>, the result is an approximation using Stirling's formula.</p>
             <h3>approximation(n)</h3>
