@@ -140,7 +140,7 @@
         <!-- Demo -->
         <section id="demo">
             <h2>Demo</h2>
-            <p>Enter a number to calculate its factorial:</p>
+            <p>Enter a number to calculate its factorial. <strong>Note:</strong> For large values of <code>n</code>, the result will be an approximation using Stirling's formula.</p>
             <input type="number" id="numberInput" min="0" placeholder="Enter a number" />
             <button id="calculateButton">Calculate</button>
             <p id="resultText"></p>
@@ -163,7 +163,7 @@
             <h2>API Description</h2>
             <p>FactorialForgeAPI provides a powerful and efficient interface for calculating factorials using modern parallel computing methods and mathematical approximations. Key methods:</p>
             <h3>compute(n)</h3>
-            <p>Calculates the factorial of the number <code>n</code> using parallel computing via Web Workers. This method is optimized for working with large numbers and uses an algorithm that splits the task into multiple threads to speed up calculations.</p>
+            <p>Calculates the factorial of the number <code>n</code> using parallel computing via Web Workers. This method is optimized for working with large numbers and uses an algorithm that splits the task into multiple threads to speed up calculations. <strong>Note:</strong> For <code>n > 20</code>, the result is an approximation using Stirling's formula.</p>
             <h3>approximation(n)</h3>
             <p>Returns an approximate value of the factorial using Stirling's formula. This method is particularly useful for large values of <code>n</code>, where exact calculation becomes computationally intensive.</p>
             <h3>Using the API</h3>
@@ -196,7 +196,7 @@ log(n!) ~ n * log(n) - n + 0.5 * log(2 * pi * n)
             <ul>
                 <li><strong>Parallel Computing:</strong> The use of Web Workers allows splitting the task into multiple threads, significantly speeding up calculations for large values of <code>n</code>.</li>
                 <li><strong>Asynchronous Processing:</strong> All calculations are performed asynchronously, preventing the main thread from being blocked and allowing the user to continue interacting with the application.</li>
-                <li><strong>Support for Large Numbers:</strong> The <code>BigInt</code> type is used to handle values that exceed the standard JavaScript numeric type.</li>
+                <li><strong>Support for Large Numbers:</strong> The <code>BigInt</code> type is used to handle values that exceed the standard JavaScript numeric type. <strong>Note:</strong> For <code>n > 20</code>, the result is an approximation using Stirling's formula.</li></li>
                 <li><strong>Stirling's Formula:</strong> For large values of <code>n</code>, Stirling's approximation is used to avoid overflow and reduce computational complexity.</li>
             </ul>
             <h3>Pros and Cons of the Algorithm</h3>
@@ -219,9 +219,9 @@ log(n!) ~ n * log(n) - n + 0.5 * log(2 * pi * n)
             <p>To evaluate the performance and accuracy of FactorialForgeAPI, tests were conducted on various devices and under different conditions. Below are the test results:</p>
             <h3>Performance</h3>
             <ul>
-                <li><strong>Desktop:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.2 ms.</li>
-                <li><strong>Laptop:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.3 ms.</li>
-                <li><strong>Smartphone:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.5 ms.</li>
+                <li><strong>Desktop:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.2 ms. <strong>Note:</strong> The result is an approximation using Stirling's formula.</li>
+                <li><strong>Laptop:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.3 ms. <strong>Note:</strong> The result is an approximation using Stirling's formula.</li>
+                <li><strong>Smartphone:</strong> Calculating the factorial for <code>n = 10<sup>100</sup></code> takes ~0.5 ms. <strong>Note:</strong> The result is an approximation using Stirling's formula.</li>
             </ul>
             <h3>Algorithm Accuracy</h3>
             <ul>
