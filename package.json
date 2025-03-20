@@ -1,0 +1,16 @@
+{
+  "name": "factorial-forge-api",
+  "version": "1.0.0",
+  "description": "A library for calculating factorials of large numbers using parallelism and Stirling's approximation.",
+  "main": "FactorialForgeAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "FactForPI Dev by Petrov I.",
+  "license": "Custom License",
+  "keywords": [
+    "factorial",
+    "parallel computing",
+    "Stirling's approximation"
+  ]
+}
