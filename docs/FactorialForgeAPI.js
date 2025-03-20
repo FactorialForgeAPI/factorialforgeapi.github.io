@@ -8,6 +8,7 @@
  * @description
  * FactorialForgeAPI provides a simple and efficient way to calculate factorials,
  * using Web Workers for parallel processing and Stirling's approximation for large numbers.
+ * It delivers exact results for small values of n and highly accurate approximations for large values of n.
  * 
  * Installation:
  * 1. Download the FactorialForgeAPI.js file.
@@ -16,8 +17,8 @@
  * Example usage:
  * ```javascript
  * (async () => {
- *   console.log(await FactorialForgeAPI.compute(100)); // Outputs the factorial of 100 as a string
- *   console.log(await FactorialForgeAPI.compute(1000)); // Outputs the factorial of 1000 as a string
+ *   console.log(await FactorialForgeAPI.compute(20)); // Outputs the factorial of 100 as a string (approximate)
+ *   console.log(await FactorialForgeAPI.compute(1000)); // Outputs the factorial of 1000 as a string (approximate)
  * })();
  * ```
  * 
@@ -99,6 +100,9 @@ async function factorial(n) {
  * Stirling's approximation for calculating the logarithm of a factorial.
  * @param {number} n - The number for which the factorial is calculated.
  * @returns {string} - The approximate value of the factorial of n as a string.
+ * @remarks
+ * This function uses Stirling's formula to provide a highly accurate approximation
+ * of the factorial for large values of n (n > 20).
  */
 function stirlingApproximation(n) {
   if (n === 0 || n === 1) return "1";
@@ -123,9 +127,9 @@ const FactorialForgeAPI = {
    * @remarks
    * This function uses two methods to calculate the factorial:
    * 1. Direct calculation using Web Workers for parallel processing, 
-   *    which allows efficient handling of large values of n.
-   * 2. Stirling's approximation for values of n > 20, which avoids 
-   *    overflow and ensures high accuracy.
+   *    which allows efficient handling of small and medium values of n (n < 20).
+   * 2. Stirling's approximation for values of n > 20, which provides 
+   *    highly accurate approximate results for large values of n.
    * 
    * Scientific justification:
    * - The factorial of n (n!) is defined as the product of all positive integers from 1 to n.
@@ -155,6 +159,6 @@ const FactorialForgeAPI = {
 
 // Example usage of the API:
 (async () => {
-  console.log(await FactorialForgeAPI.compute(100)); // Outputs the factorial of 100 as a string
-  console.log(await FactorialForgeAPI.compute(1000)); // Outputs the factorial of 1000 as a string
+  console.log(await FactorialForgeAPI.compute(20)); // Outputs the factorial of 100 as a string (approximate)
+  console.log(await FactorialForgeAPI.compute(1000)); // Outputs the factorial of 1000 as a string (approximate)
 })();
